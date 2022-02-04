@@ -1,0 +1,35 @@
+Iniciando com Docker;
+
+- docker run hello-world -> executa o container 
+- docker ps -a  -> Mostra todos os container em execução
+- docker run -it ubuntu bash -> cria/sobe o container e entra no terminal do mesmo
+- docker run nginx -> 
+ 
+docker exec -it naughty_meitner bash
+docker exec -it nome_container bash
+
+
+docker run -p 8000:80 nginx
+-p : publicar a porta do meu container no meu computador
+-v : define o volume para ser compartilhado entre a pasta do pc e do container
+
+Fazer compartilhamento de pasta/espelhamento
+docker run -p 8000:80 -v ${pwd}/html:/usr/share/nginx/html nginx
+
+-- gerando imagem 
+- docker build -t simaoneto/learn-docker-nginx .
+
+- run: cria um container
+- exec: executa um comando em um container que já está rodando
+
+
+
+In Windows Command Line (cmd), you can mount the current directory like so:
+
+docker run --rm -it -v %cd%:/usr/src/project gcc:4.9
+In PowerShell, you use ${PWD}, which gives you the current directory:
+
+docker run --rm -it -v ${PWD}:/usr/src/project gcc:4.9
+On Linux:
+
+docker run --rm -it -v $(pwd):/usr/src/project gcc:4.9
