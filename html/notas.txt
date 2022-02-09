@@ -1,9 +1,9 @@
 Iniciando com Docker;
 
 - docker run hello-world -> executa o container 
-- docker ps -a  -> Mostra todos os container em execução
+- docker ps -a  -> Mostra todos os container
 - docker run -it ubuntu bash -> cria/sobe o container e entra no terminal do mesmo
-- docker run nginx -> 
+- docker run nginx -> docker run -p 8000:80 nginx 
  
 docker exec -it naughty_meitner bash
 docker exec -it nome_container bash
@@ -21,7 +21,7 @@ docker run -p 8000:80 -v ${pwd}/html:/usr/share/nginx/html nginx
 
 - run: cria um container
 - exec: executa um comando em um container que já está rodando
-
+- docker compose up - ler o ficheiro e sobe o docker com todas as instruções no ficheiro 
 
 
 In Windows Command Line (cmd), you can mount the current directory like so:
